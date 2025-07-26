@@ -1,10 +1,12 @@
 // src/components/Header.tsx
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../images/logo/logo_clearname.png";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const menuItems = [
     { label: "ホーム", href: "/" },
@@ -12,9 +14,14 @@ function Header() {
     { label: "ニュース情報", href: "/news" },
     { label: "K-League", href: "#league" },
   ];
+
+  const isActivePage = (href: string) => {
+    return location.pathname === href;
+  };
+
   return (
     <header
-      className="fixed top-0 w-full shadow-lg"
+      className="fixed top-0 w-full shadow-lg z-50"
       style={{ backgroundColor: "#213a37" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,15 +34,19 @@ function Header() {
 
           {/* デスクトップメニュー */}
           <nav className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-baseline space-x-4">
               {menuItems.map((item) => (
-                <a
+                <Link
                   key={item.href}
-                  href={item.href}
-                  className="text-gray-100 hover:text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300"
+                  to={item.href}
+                  className={`px-4 py-2 rounded-md text-sm transition-all duration-300 ${
+                    isActivePage(item.href)
+                      ? "bg-white text-[#213a37] font-bold shadow-md"
+                      : "text-gray-100 hover:text-white hover:bg-white hover:bg-opacity-10 font-medium"
+                  }`}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
           </nav>
@@ -62,14 +73,18 @@ function Header() {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-white border-opacity-20">
             {menuItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
-                className="text-gray-100 hover:text-white hover:bg-white hover:bg-opacity-10 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300"
+                to={item.href}
+                className={`block px-3 py-2 rounded-md text-base transition-all duration-300 ${
+                  isActivePage(item.href)
+                    ? "bg-white text-[#213a37] font-bold"
+                    : "text-gray-100 hover:text-white hover:bg-white hover:bg-opacity-10 font-medium"
+                }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
