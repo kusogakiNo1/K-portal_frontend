@@ -4,6 +4,9 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import News from "./pages/News";
+import Members from "./pages/Members";
 import SearchUsers from "./pages/SearchUsers";
 import Layout from "./components/layouts/Layout";
 
@@ -16,7 +19,9 @@ root.render(
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/" element={<App />} /> {/* ホームパス */}
+          <Route path="/" element={<Home />} /> {/* ホームパス */}
+          <Route path="/members" element={<Members />} />
+          <Route path="/news" element={<News />} />
           <Route path="/search/user" element={<SearchUsers />} />
         </Routes>
       </Layout>

@@ -1,19 +1,22 @@
 // src/components/Header.tsx
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "../../images/logo_clearname.png";
+import logo from "../../images/logo/logo_clearname.png";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const menuItems = [
-    { label: "ホーム", href: "#home" },
-    { label: "メンバー紹介", href: "#members" },
-    { label: "お知らせ", href: "#news" },
-    { label: "イベント", href: "#events" },
+    { label: "ホーム", href: "/" },
+    { label: "メンバー紹介", href: "/members" },
+    { label: "ニュース情報", href: "/news" },
+    { label: "K-League", href: "#league" },
   ];
   return (
-    <header className="w-full shadow-lg" style={{ backgroundColor: "#213a37" }}>
+    <header
+      className="fixed top-0 w-full shadow-lg"
+      style={{ backgroundColor: "#213a37" }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* ロゴ */}
