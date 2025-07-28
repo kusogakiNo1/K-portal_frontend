@@ -3,6 +3,7 @@ import image from "../images/members/nunogawara/card.png";
 import nunostandimage from "../images/members/nunogawara/stand.png";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { BackgroudColor } from "../components/BackgroudColor";
 
 interface Member {
   id: number;
@@ -146,22 +147,7 @@ const MemberShowcase = () => {
       {/* 動的背景エフェクト */}
       <div className="absolute inset-0 overflow-hidden">
         {/* 対角線背景レイヤー */}
-        <div
-          className="absolute inset-0 transition-all duration-700"
-          style={{
-            backgroundColor: selectedMember.themeColor,
-            opacity: 0.5,
-            clipPath: "polygon(0% 0%, 50% 0%, 0% 70%)",
-          }}
-        />
-        <div
-          className="absolute inset-0 transition-all duration-700"
-          style={{
-            backgroundColor: selectedMember.themeColor,
-            opacity: 0.5,
-            clipPath: "polygon(60% 100%, 100% 100%, 100% 30%)",
-          }}
-        />
+        <BackgroudColor color={selectedMember.themeColor}></BackgroudColor>
         {/* メインのグラデーション背景 */}
         <div
           className="absolute inset-0 opacity-10 transition-all duration-700"
