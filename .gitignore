@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# local環境表示用の画像保管フォルダ（gitのpublicリポジトリにpushされるのは衛生上よろしくないので、gitignoreに含めておく）
+/src/images/
