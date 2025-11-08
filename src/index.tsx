@@ -4,7 +4,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SearchHorses from "./pages/SearchHorses"; // 作成したコンポーネントをインポート
+import Home from "./pages/Home";
+import News from "./pages/News";
+import NewsDetail from "./pages/NewsDetail";
+import Members from "./pages/Members";
+import SearchUsers from "./pages/SearchUsers";
+import Layout from "./components/layouts/Layout";
 
 // ルーティングを行っています
 const root = ReactDOM.createRoot(
@@ -13,10 +18,15 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} /> {/* ホームパス */}
-        <Route path="/search/horse" element={<SearchHorses />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} /> {/* ホームパス */}
+          <Route path="/members" element={<Members />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/news/:id" element={<NewsDetail />} />
+          <Route path="/search/user" element={<SearchUsers />} />
+        </Routes>
+      </Layout>
     </BrowserRouter>
   </React.StrictMode>
 );
