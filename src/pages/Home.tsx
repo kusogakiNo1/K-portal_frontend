@@ -1,7 +1,13 @@
 // src/pages/About.tsx
 import React from "react";
+import { useState, useEffect } from "react";
 import { PageTitle } from "../components/PageTitle";
 const Home: React.FC = () => {
+  // コンポーネントマウント時の自動実行
+  useEffect(() => {
+    // ページタイトルを動的に設定する
+    document.title = "ホーム";
+  }, []);
   return (
     <div>
       <img

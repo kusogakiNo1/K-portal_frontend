@@ -28,6 +28,8 @@ const MemberShowcase: React.FC = () => {
   };
   // コンポーネントマウント時の自動実行
   useEffect(() => {
+    // ページタイトルを動的に設定する
+    document.title = "メンバー情報";
     fetchMembers();
   }, []);
 

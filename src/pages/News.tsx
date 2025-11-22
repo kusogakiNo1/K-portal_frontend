@@ -2,7 +2,7 @@
 import React from "react";
 import { PageTitle } from "../components/PageTitle";
 import { BackgroudColor } from "../components/BackgroudColor";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Calendar, Tag } from "lucide-react";
 
@@ -162,6 +162,12 @@ const NewsPage = () => {
     categories.find((cat) => cat.id === selectedCategory)?.filter ||
       (() => true)
   );
+
+  // コンポーネントマウント時の自動実行
+  useEffect(() => {
+    // ページタイトルを動的に設定する
+    document.title = "ニュース情報";
+  }, []);
 
   // ページング計算
   const totalPages = Math.ceil(filteredNews.length / ITEMS_PER_PAGE);
