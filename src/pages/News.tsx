@@ -2,7 +2,7 @@
 import React from "react";
 import { PageTitle } from "../components/PageTitle";
 import { BackgroudColor } from "../components/BackgroudColor";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Calendar, Tag } from "lucide-react";
 
@@ -163,6 +163,12 @@ const NewsPage = () => {
       (() => true)
   );
 
+  // コンポーネントマウント時の自動実行
+  useEffect(() => {
+    // ページタイトルを動的に設定する
+    document.title = "ニュース情報";
+  }, []);
+
   // ページング計算
   const totalPages = Math.ceil(filteredNews.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -250,17 +256,11 @@ const NewsPage = () => {
       {/* 対角線背景レイヤー */}
       <BackgroudColor color="#c0c0c0"></BackgroudColor>
       {/* ヘッダー */}
-      <div className="pt-8 pb-6 text-center relative z-10">
-        <h1 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mt-16">
-          ニュース情報
-        </h1>
-        <div
-          className="w-24 h-1 mx-auto transition-all duration-500"
-          style={{
-            background: "linear-gradient(to right, #a9a9a9, #696969)",
-          }}
-        />
-      </div>
+      <PageTitle
+        title="ニュース情報"
+        color="#a9a9a9"
+        accentColor="#696969"
+      ></PageTitle>
       {/* メインニュースのスライダー(スマホ画面では非表示)*/}
       {featuredNews.length > 0 && (
         <div className="relative z-10 hidden md:block">

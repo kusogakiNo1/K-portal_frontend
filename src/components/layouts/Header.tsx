@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../../images/logo/logo_clearname.png";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -29,7 +28,7 @@ function Header() {
           {/* ロゴ */}
 
           <div className="h-16 w-56">
-            <img src={logo} alt="ロゴ"></img>
+            <img src="images/logo_clearname.png" alt="ロゴ"></img>
           </div>
 
           {/* デスクトップメニュー */}

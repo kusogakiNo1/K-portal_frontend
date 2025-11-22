@@ -1,20 +1,23 @@
 // src/pages/About.tsx
 import React from "react";
-import { SearchComponent } from "../components/SearchComponent";
+import { useState, useEffect } from "react";
 import { PageTitle } from "../components/PageTitle";
-import backgroud from "../images/home/ajito_securebase.png";
-
 const Home: React.FC = () => {
+  // コンポーネントマウント時の自動実行
+  useEffect(() => {
+    // ページタイトルを動的に設定する
+    document.title = "ホーム";
+  }, []);
   return (
     <div>
       <img
-        src={backgroud}
+        src="/images/home/ajito_securebase.png"
         alt="アジト背景＋エモい文字列"
         className="w-full"
       ></img>
 
       <div className="mt-16 ml-16 mr-16">
-        <PageTitle title="ホーム"></PageTitle>
+        {/* <PageTitle title="ホーム"></PageTitle> */}
         <div>あ あ あ</div>
         <div>あ あ あ</div>
         <div>あ あ あ</div>
