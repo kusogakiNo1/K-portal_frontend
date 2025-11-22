@@ -11,7 +11,7 @@ const Home: React.FC = () => {
       ></img>
 
       <div className="mt-16 ml-16 mr-16">
-        <PageTitle title="ホーム"></PageTitle>
+        {/* <PageTitle title="ホーム"></PageTitle> */}
         <div>あ あ あ</div>
         <div>あ あ あ</div>
         <div>あ あ あ</div>

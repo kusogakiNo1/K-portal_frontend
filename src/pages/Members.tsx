@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { PageTitle } from "../components/PageTitle";
 import { BackgroudColor } from "../components/BackgroudColor";
 import { MemberInfo } from "../components/members/MemberInfo";
 import { getAllMembers } from "../api/member";
@@ -70,19 +71,12 @@ const MemberShowcase: React.FC = () => {
         {/* メインコンテンツ */}
         <div className="relative z-10 min-h-screen flex flex-col">
           {/* ヘッダー */}
-          <div className="pt-8 pb-6 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mt-16">
-              メンバー紹介
-            </h1>
-            <div className="pt-8 pb-6 text-center">
-              <div
-                className="w-24 h-1 mx-auto transition-all duration-500"
-                style={{
-                  background: `linear-gradient(to right, ${selectedMember.color}, ${selectedMember.accentColor})`,
-                }}
-              />
-            </div>
-          </div>
+          <PageTitle
+            title="メンバー紹介"
+            color={selectedMember.color}
+            accentColor={selectedMember.accentColor}
+          ></PageTitle>
+          {/* メンバー情報 */}
           <MemberInfo
             memberInfo={selectedMember}
             isAnimating={isAnimating}
