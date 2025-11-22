@@ -1,14 +1,11 @@
 // src/pages/About.tsx
 import React from "react";
-import { SearchComponent } from "../components/SearchComponent";
 import { PageTitle } from "../components/PageTitle";
-import backgroud from "../images/home/ajito_securebase.png";
-
 const Home: React.FC = () => {
   return (
     <div>
       <img
-        src={backgroud}
+        src="/images/home/ajito_securebase.png"
         alt="アジト背景＋エモい文字列"
         className="w-full"
       ></img>
