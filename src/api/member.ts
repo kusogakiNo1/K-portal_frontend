@@ -1,6 +1,34 @@
 // メンバー情報を取得する系APIを実行するための関数をまとめたファイル
-import { getAllMembersAPIResponse } from "../types/getAllMembersAPIResponse";
 import { apiClient } from "./axiosClient";
+
+export interface getAllMembersAPIResponse {
+  id: number;
+  name: string;
+  birthday: string;
+  imagePath: string;
+  catchCopy: string;
+  description: string;
+  color: string;
+  accentColor: string;
+  tags: MemberTag[];
+}
+
+interface Member {
+  id: number;
+  name: string;
+  birthday: string;
+  imagePath: string;
+  catchCopy: string;
+  description: string;
+  color: string;
+  accentColor: string;
+  tags: MemberTag[];
+}
+
+interface MemberTag {
+  id: number;
+  name: string;
+}
 
 /**
  * 全メンバーのリストを取得する

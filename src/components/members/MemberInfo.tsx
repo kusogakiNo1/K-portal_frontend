@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { getAllMembersAPIResponse } from "../../types/getAllMembersAPIResponse";
+import { getAllMembersAPIResponse } from "../../api/member";
 
 interface ChildProps {
   memberInfo: getAllMembersAPIResponse;
