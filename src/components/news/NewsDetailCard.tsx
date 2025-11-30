@@ -15,10 +15,14 @@ export function NewsDetailCard({ newsDetail }: ChildProps) {
           <Tag className="w-4 h-4 mr-2" />
           <span
             className={`px-4 py-2 rounded-full text-sm font-medium border-2 ${
-              newsDetail.category === "event"
+              Number(newsDetail.category) === 2
                 ? "bg-purple-50 text-purple-700 border-purple-200"
-                : newsDetail.category === "announcement"
+                : Number(newsDetail.category) === 1
                 ? "bg-blue-50 text-blue-700 border-blue-200"
+                : Number(newsDetail.category) === 3
+                ? "bg-green-50 text-green-700 border-green-200"
+                : Number(newsDetail.category) === 4
+                ? "bg-gray-50 text-gray-700 border-gray-200"
                 : "bg-green-50 text-green-700 border-green-200"
             }`}
           >

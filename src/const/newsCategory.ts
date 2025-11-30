@@ -1,7 +1,7 @@
 import { NewsCard } from "../pages/News";
 
 export const categories = [
-  { id: 0, name: "最新", filter: () => true },
+  { id: 0, name: "すべて", filter: () => true },
   {
     id: 1,
     name: "お知らせ",
