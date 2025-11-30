@@ -30,9 +30,9 @@ function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* ロゴ */}
-          <div className="h-16 w-56">
+          <Link to="/" className="h-16 w-56 cursor-pointer">
             <img src="/images/logo_clearname.png" alt="ロゴ"></img>
-          </div>
+          </Link>
 
           {/* デスクトップメニュー */}
           <nav className="hidden md:block">
