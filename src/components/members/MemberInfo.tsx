@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { getAllMembersAPIResponse } from "../../types/getAllMembersAPIResponse";
+import { getAllMembersAPIResponse } from "../../api/member";
 
 interface ChildProps {
   memberInfo: getAllMembersAPIResponse;
@@ -7,7 +6,6 @@ interface ChildProps {
 }
 
 export function MemberInfo({ memberInfo, isAnimating }: ChildProps) {
-  console.log(memberInfo.imagePath);
   return (
     <div className="relative z-10 flex flex-col">
       {/* メイン表示エリア */}

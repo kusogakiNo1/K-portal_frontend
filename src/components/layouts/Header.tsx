@@ -10,7 +10,7 @@ function Header() {
   const menuItems = [
     { label: "ホーム", href: "/" },
     { label: "メンバー紹介", href: "/members" },
-    { label: "ニュース情報", href: "/news" },
+    { label: "お知らせ情報", href: "/news" },
     { label: "K-League", href: "#league" },
   ];
 

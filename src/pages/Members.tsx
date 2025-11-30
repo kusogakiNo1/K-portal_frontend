@@ -4,7 +4,7 @@ import { PageTitle } from "../components/PageTitle";
 import { BackgroudColor } from "../components/BackgroudColor";
 import { MemberInfo } from "../components/members/MemberInfo";
 import { getAllMembers } from "../api/member";
-import { getAllMembersAPIResponse } from "../types/getAllMembersAPIResponse";
+import { getAllMembersAPIResponse } from "../api/member";
 
 const MemberShowcase: React.FC = () => {
   const [allMembers, setMembers] = useState<getAllMembersAPIResponse[]>([]);
