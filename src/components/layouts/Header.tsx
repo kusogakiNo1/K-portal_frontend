@@ -15,7 +15,11 @@ function Header() {
   ];
 
   const isActivePage = (href: string) => {
-    return location.pathname === href;
+    if (href === "/news") {
+      return location.pathname.startsWith("/news");
+    } else {
+      return location.pathname === href;
+    }
   };
 
   return (
@@ -26,7 +30,6 @@ function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* ロゴ */}
-
           <div className="h-16 w-56">
             <img src="images/logo_clearname.png" alt="ロゴ"></img>
           </div>
