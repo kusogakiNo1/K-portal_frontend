@@ -31,7 +31,7 @@ function Header() {
         <div className="flex justify-between items-center h-16">
           {/* ロゴ */}
           <div className="h-16 w-56">
-            <img src="images/logo_clearname.png" alt="ロゴ"></img>
+            <img src="/images/logo_clearname.png" alt="ロゴ"></img>
           </div>
 
           {/* デスクトップメニュー */}
