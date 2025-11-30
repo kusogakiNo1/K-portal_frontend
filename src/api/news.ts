@@ -15,6 +15,15 @@ export interface News {
   thumbnailPath: string;
 }
 
+export interface NewsDetail {
+  id: number;
+  title: string;
+  category: string;
+  date: string;
+  detail: string;
+  thumbnailPath: string;
+}
+
 /**
  * お知らせリストを取得する
  * @returns お知らせ情報、取得したお知らせの数、お知らせの総数を含むレスポンス
@@ -37,6 +46,21 @@ export const getNews = async (
   } catch (error) {
     // 適切なエラーハンドリング (例: ロギング、特定のエラーコードの再 throw)
     console.error("お知らせ情報取得エラー:", error);
+    throw error;
+  }
+};
+
+/**
+ * 指定されたidのお知らせ詳細情報を取得する
+ * @returns お知らせ情報
+ */
+export const getNewsDetail = async (id: number): Promise<NewsDetail> => {
+  try {
+    const response = await apiClient.get<NewsDetail>(`/news/${id}`);
+    return response.data;
+  } catch (error) {
+    // 適切なエラーハンドリング (例: ロギング、特定のエラーコードの再 throw)
+    console.error("お知らせ詳細情報取得エラー:", error);
     throw error;
   }
 };

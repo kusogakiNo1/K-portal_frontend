@@ -10,7 +10,7 @@ export function BackgroudColor({ color }: ChildProps) {
       {/* スマホ */}
       <div className="block md:hidden">
         <div
-          className="absolute transition-all duration-700" // inset-0は使わない場合がある
+          className="absolute transition-all duration-100" // inset-0は使わない場合がある
           style={{
             // 位置を指定
             top: "0px",
@@ -25,7 +25,7 @@ export function BackgroudColor({ color }: ChildProps) {
           }}
         />
         <div
-          className="absolute transition-all duration-700" // inset-0は使わない場合がある
+          className="absolute transition-all duration-100" // inset-0は使わない場合がある
           style={{
             // 位置を指定
             // 親要素の右下隅に配置
@@ -44,7 +44,7 @@ export function BackgroudColor({ color }: ChildProps) {
       {/* それ以外 */}
       <div className="hidden md:block">
         <div
-          className="absolute transition-all duration-700" // inset-0は使わない場合がある
+          className="absolute transition-all duration-100" // inset-0は使わない場合がある
           style={{
             // 位置を指定
             top: "0px",
@@ -59,7 +59,7 @@ export function BackgroudColor({ color }: ChildProps) {
           }}
         />
         <div
-          className="absolute transition-all duration-700" // inset-0は使わない場合がある
+          className="absolute transition-all duration-100" // inset-0は使わない場合がある
           style={{
             // 位置を指定
             // 親要素の右下隅に配置
