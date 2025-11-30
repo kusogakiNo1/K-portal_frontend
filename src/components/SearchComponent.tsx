@@ -30,10 +30,8 @@ export const SearchComponent: React.FC = () => {
       const apiUrl = `http://localhost:5000/user/${inputValue}`;
 
       const response = await axios.get<SearchResponse>(apiUrl); // axios.getを使用\
-      console.log(response.data);
 
       setSearchResults(response.data); // レスポンスデータは response.data に格納されています
-      console.log(searchResults);
     } catch (e: any) {
       setError("検索中にエラーが発生しました。");
       console.error("検索エラー:", e);

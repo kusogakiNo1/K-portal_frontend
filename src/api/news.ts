@@ -11,7 +11,7 @@ export interface News {
   id: number;
   title: string;
   category: string;
-  date: number;
+  date: string;
   thumbnailPath: string;
 }
 
@@ -20,17 +20,17 @@ export interface News {
  * @returns お知らせ情報、取得したお知らせの数、お知らせの総数を含むレスポンス
  */
 export const getNews = async (
-  category: number,
-  limit: number,
-  offset: number
+  category?: number,
+  limit?: number,
+  offset?: number
 ): Promise<getNewsAPIResponse> => {
   try {
     const response = await apiClient.get<getNewsAPIResponse>("/news", {
-      // クエリパラメータ
+      // クエリパラメータ (undefined の場合はキー自体を含めない)
       params: {
-        category: category ?? undefined, // 渡したいキーと値
-        limit: limit ?? undefined,
-        offset: offset ?? undefined,
+        ...(category !== undefined && category !== 0 && { category }),
+        ...(limit !== undefined && { limit }),
+        ...(offset !== undefined && { offset }),
       },
     });
     return response.data;
